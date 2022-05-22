@@ -4,75 +4,77 @@ Youcompleteme: use autocomplete directly
 NerdTree: For browsing directory structure: Use F5 for nerd tree to appear/disappear
 tagbar: For browsing variables/functions within current file: Use F8 to tagbar to appear disappear
 Ctrl+P: Use this for file search
-fzf: Git commands
+
+    fzf: Git commands
     - status
     - add
     - commit
     - diff
     - blame
-:tab sball
-:tabnew
-gt, gT
+    - :tab sball
+    - :tabnew
+    - gt, gT
 
-Use ctrl+w w for moving the control between nerdtree, current file and tagbar
+****Use ctrl+w w for moving the control between nerdtree, current file and tagbar*
 
 
-start new:
+    start new:
 
-tmux
-start new with session name:
+    tmux
+    start new with session name:
 
-tmux new -s myname
-attach:
+    tmux new -s myname
+    attach:
 
-tmux a  #  (or at, or attach)
-attach to named:
+    tmux a  #  (or at, or attach)
+    attach to named:
 
-tmux a -t myname
-list sessions:
+    tmux a -t myname
+    list sessions:
 
-tmux ls
-kill session:
+    tmux ls
+    kill session:
 
-tmux kill-session -t myname
-Kill all the tmux sessions:
+    tmux kill-session -t myname
+    Kill all the tmux sessions:
 
-tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
-In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:
+    tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+    In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:
 
 List all shortcuts
 to see all the shortcuts keys in tmux simply use the bind-key ? in my case that would be CTRL-B ?
 
-Sessions
-:new<CR>  new session
-s  list sessions
-$  name session
-Windows (tabs)
-c  create window
-w  list windows
-n  next window
-p  previous window
-f  find window
-,  name window
-&  kill window
-Panes (splits)
-%  vertical split
-"  horizontal split
+    Sessions
+    :new<CR>  new session
+    s  list sessions
+    $  name session
+    Windows (tabs)
+    c  create window
+    w  list windows
+    n  next window
+    p  previous window
+    f  find window
+    ,  name window
+    &  kill window
+    Panes (splits)
+    %  vertical split
+    "  horizontal split
 
-o  swap panes
-q  show pane numbers
-x  kill pane
-+  break pane into window (e.g. to select text by mouse to copy)
--  restore pane from window
-⍽  space - toggle between layouts
-<prefix> q (Show pane numbers, when the numbers show up type the key to goto that pane)
-<prefix> { (Move the current pane left)
-<prefix> } (Move the current pane right)
-<prefix> z toggle pane zoom
+    o  swap panes
+    q  show pane numbers
+    x  kill pane
+    +  break pane into window (e.g. to select text by mouse to copy)
+    -  restore pane from window
+    ⍽  space - toggle between layouts
+    <prefix> q (Show pane numbers, when the numbers show up type the key to goto that pane)
+    <prefix> { (Move the current pane left)
+    <prefix> } (Move the current pane right)
+    <prefix> z toggle pane zoom
+
 Sync Panes
 You can do this by switching to the appropriate window, typing your Tmux prefix (commonly Ctrl-B or Ctrl-A) and then a colon to bring up a Tmux command line, and typing:
 
-:setw synchronize-panes
+    :setw synchronize-panes
 You can optionally add on or off to specify which state you want; otherwise the option is simply toggled. This option is specific to one window, so it won’t change the way your other sessions or windows operate. When you’re done, toggle it off again by repeating the command. tip source
 
 Resizing Panes
