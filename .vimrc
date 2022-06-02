@@ -1,5 +1,6 @@
 set nocompatible
-filetype off " required
+set paste
+filetyp off " required
 
 filetype indent on
 
@@ -12,6 +13,7 @@ set number
 set hlsearch
 set ruler
 highlight Comment ctermfg=green
+set pastetoggle=<F3>
 
 set ignorecase
 set smartcase
@@ -64,7 +66,7 @@ set autoindent
 
 " indent for special file
 autocmd FileType c,cpp setlocal expandtab shiftwidth=4 softtabstop=4 cindent 
-autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4 autoindent
+autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4 smartindent
 
 " setup for ycm
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'

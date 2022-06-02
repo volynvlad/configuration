@@ -1,3 +1,18 @@
+# 0. install zsh & terminator
+sudo apt install -y terminator
+sudo apt install -y zsh
+chsh -s $(which zsh)
+
+# powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+sudo echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
+p10k configure
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# then change .zshrc
+### plugins=(git zsh-syntax-highlighting)
+
+
 # 1.install dependencies
 sudo apt install vim
 sudo apt install git
