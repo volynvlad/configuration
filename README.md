@@ -158,3 +158,22 @@ Copy mode:
      unbind Down
      bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp]"
 
+
+## set up allacrity terminal 
+    have alacritty installed with snap which made the setup process more difficult since to start alacritty you have to use the snap run alacrtty command. ( which alacritty will give /snap/bin/alacritty but that is just a symlink to the snap binary )
+
+    I created the following script in /usr/bin/start-alacritty :
+
+    #!/bin/sh
+
+    /usr/bin/snap run alacritty
+
+# And set/copied the permissions accordingly:
+
+    sudo chown root:root /usr/bin/start-alacritty
+    sudo chmod --reference=/usr/bin/ls /usr/bin/start-alacritty
+    Followed by the commands from above:
+
+    sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/start-alacritty 50
+    sudo update-alternatives --config x-terminal-emulator
+
