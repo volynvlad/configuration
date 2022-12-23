@@ -1,3 +1,7 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.pre.bash"
+export PS1='\u@\h:\[\e[33m\]\w\[\e[0m\]\$ '
+export EDITOR='vim'
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -124,16 +128,21 @@ export PATH=$PATH:/usr/local/bin/helm
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/vlad/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/vlad/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/vlad/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/vlad/anaconda3/bin:$PATH"
-    fi
-fi
+# __conda_setup="$('/home/vlad/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/vlad/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/vlad/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/vlad/anaconda3/bin:$PATH"
+#     fi
+# fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# source /home/vlad/apps/alacritty/extra/completions/alacritty.bash
+. "$HOME/.cargo/env"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"

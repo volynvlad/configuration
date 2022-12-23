@@ -32,12 +32,9 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 python ~/.vim/bundle/YouCompleteMe/install.py
 
 # 5. Terminator theme
- mkdir -p $HOME/.config/terminator/plugins
- wget https://git.io/v5Zww -O $HOME"/.config/terminator/plugins/terminator-themes.py"
+mkdir -p $HOME/.config/terminator/plugins
+wget https://git.io/v5Zww -O $HOME"/.config/terminator/plugins/terminator-themes.py"
 
- # 6. Autosuggestions
- git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-
-
-
+# 6. Autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
